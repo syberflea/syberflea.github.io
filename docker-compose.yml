@@ -1,0 +1,40 @@
+version: '3.3'
+
+services:
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - '8000:8000'
+    environment:
+      - DEBUG=0
+      - SECRET_KEY=django-insecure-e*xtnreq84@^=qfb8bv@o-a(4rs^-j$=x3ga@phg9g&k)@czw+
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+      - CELERY_BROKER=redis://redis:6379/0
+      - CELERY_BACKEND=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  celery:
+      build: .
+      command: celery --app=Picasso_test worker --loglevel=info --logfile=celery.log
+      volumes:
+        - .:/app
+      environment:
+        - DEBUG=0
+        - SECRET_KEY=django-insecure-e*xtnreq84@^=qfb8bv@o-a(4rs^-j$=x3ga@phg9g&k)@czw+
+        - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+        - CELERY_BROKER=redis://redis:6379/0
+        - CELERY_BACKEND=redis://redis:6379/0
+      depends_on:
+        - web
+        - redis
+
+  redis:
+      image: redis
+      command: redis-server
+      ports:
+          - '6379:6379'
