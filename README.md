@@ -1,2 +1,3 @@
-# picasso_test
-Тестовое задание: Загрузка и обработка файлов
+# Local site repo
+
+Store some files for the website.
