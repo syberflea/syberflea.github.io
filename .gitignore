@@ -163,3 +163,5 @@ cython_debug/
 media/
 /media/
 /Picasso_test/data.txt
+one.py
+two.py
