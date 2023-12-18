@@ -1,0 +1,38 @@
+The find Command: Searching for Large Files
+The find command in Linux is a powerful utility for seeking out files that meet specific criteria. To hone in on large files, we can employ the find command with size options:
+
+find / -type f -size +100M
+
+This command line incantation will list all files larger than 100 megabytes from the root directory. It's possible to modify the search criteria for a range of sizes or to execute actions on the files that are found, such as removing them with -exec rm {} \; appended to the command.
+
+The du Command: Assessing File and Directory Sizes
+While find is excellent for pinpointing files, du dives deeper, allowing us to understand the sizes of directories as well:
+
+du -h --max-depth=1 /var | sort -hr | head -10
+
+This chain of commands will display the sizes of directories within /var, sort them in descending order, and show the top 10. This is incredibly useful for uncovering directories that have grown unexpectedly bulky.
+
+Advanced Methods: ncdu and ls Command Tricks
+Beyond the basics lies ncdu, a simple yet robust utility that presents a disk usage analyzer with an ncurses interface, allowing users to navigate through the directory structure. Once installed via the package manager, you can launch it with ncdu /, and it will analyze the directory sizes interactively.
+
+Additionally, the ls command can be coaxed into listing files by size with:
+
+ls -lShr
+
+alias gs="git status"
+alias gd="git diff"
+alias gitc="git commit -m"
+alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%>'
+alias ll="ls -alF"
+alias la="ls -A"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias h="history | tail -30"
+alias TAR="tar -zcvf" # dest source
+alias UNTAR="tar -zxvf" # source
+
+alias update="sudo apt-get update && sudo apt-get upgrade"
+alias gh="history|grep"
