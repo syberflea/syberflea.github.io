@@ -6,9 +6,9 @@
 
 `Alt 3` Find
 
-`Alt 4`
+`Alt 4` Open Run window
 
-`Alt 5`
+`Alt 5` Open Debug window
 
 `Alt 6` Problems
 
