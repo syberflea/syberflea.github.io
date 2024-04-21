@@ -36,3 +36,7 @@ alias UNTAR="tar -zxvf" # source
 
 alias update="sudo apt-get update && sudo apt-get upgrade"
 alias gh="history|grep"
+
+История и его очистка
+cat ~/.bash_history | more
+cat /dev/null > ~/.bash_history && history -c && exit
