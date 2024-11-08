@@ -12,7 +12,7 @@
 
 `cat ~/.gitconfig`   
 `git config --list`  
-`git config --list --show-origin'  
+`git config --list --show-origin`  
 
 ### Инициализация репозитория  
 
