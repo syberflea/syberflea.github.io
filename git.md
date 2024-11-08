@@ -10,9 +10,9 @@
 
 Убедитесь, что данные сохранились, с помощью одной из следующих команд:  
 
-`$ cat ~/.gitconfig`   
-`$ git config --list`  
-`git config --list --show-origin'
+`cat ~/.gitconfig`   
+`git config --list`  
+`git config --list --show-origin'  
 
 ### Инициализация репозитория  
 
@@ -20,7 +20,7 @@
 
 ## Синхронизация локального и удалённого репозиториев  
 
-`git remote add origin https://github.com/YandexPracticum/first-project.git`  — привяжи локальный репозиторий к расположенному сервере, например: https://github.com/YandexPracticum/first-project.git
+`git remote add origin https://github.com/YandexPracticum/first-project.git`  — привяжи локальный репозиторий к расположенному сервере  
 
 `git remote -v` — проверь, что репозитории действительно связались;
 
