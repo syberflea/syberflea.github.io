@@ -29,9 +29,10 @@ SELECT type,
        COUNT(*)
 FROM movies
 GROUP BY type;
-
+```
 
 Найдём самый старый фильм (MIN) в каждой группе: 
+```
 SELECT type,
        MIN(release_year)
 FROM movies
